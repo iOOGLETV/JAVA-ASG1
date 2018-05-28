@@ -1,0 +1,81 @@
+Assignment 1 - Bank ATM using Inheritance - March 16
+Posted on: Wednesday, February 17, 2016 7:19:20 PM CST
+	• For this assignment you will use the puzzle pieces provided posted under Docs & Assignments. 
+	• The general code is given to you in the Account Class. 
+	• The other pieces show a students class and its sub classes (inherited/extended class) of Grad and UnderGrad students along with another class called RunStudent, Process Student or StudentArray
+	• You will need use the model provided with the student class and build a model for a Bank ATM
+	• The bank ATM must allow for three unique accounts in an array, arraylist or hashmap collection
+
+
+ArrayList and HashMap Example 
+public class StudentArray
+{
+ public static void main(String[] args)
+        {
+                
+                  StudentArray sa = new StudentArray();      
+                        sa.initStu();
+ }
+        
+        public void initStu()
+        {
+           
+                String id;
+                float ex1, ex2;
+                Scanner sc = new Scanner(System.in);
+                Student[] sarray = new Student[3];
+                ArrayList<Student> alstu = new ArrayList<>();
+                HashMap hm = new HashMap();
+                
+               for(int i=0; i<sarray.length; i++)
+                {           
+                        System.out.println("Please enter if you want to deposit into you Checking or Savings account [C or S]");
+                        
+                        String input = sc.next();
+                    
+                       if(input.equalsIgnoreCase("C" || "c"))                //Checking
+                        {
+                            //sarray[i] = new GradStudent();
+                            alstu.add(1, new GradStudent());              //arrayList
+                            hm.put("test1", new GradStudent());        //hashmap             
+                        }
+                        else if(input.equalsIgnoreCase("S" || "s"))       //Saving
+                        {
+                            sarray[i] = new UnderGradStudent();        //array
+                        }     
+                 }
+                        
+                        System.out.print("Enter ID#: [0,1 or 2]: ");
+                        id = sc.next();
+                        System.out.print("Enter Exam 1: ");
+                       ex1 = sc.nextFloat();
+                       System.out.print("Enter Exam 2: ");
+                       ex2 = sc.nextFloat();
+                        
+                        System.out.println("Please enter your number: ");
+                        int x = sc.nextInt();
+                        /*sarray[x].setID(id);
+                        sarray[x].setExam1(ex1);
+                        sarray[x].setExam2(ex2);
+                        sarray[x].showAll();
+                        sarray[x].showGrades();*/
+                        GradStudent gs = (GradStudent) hm.get("test1");
+                       
+                        
+                        alstu.get(x).setExam1(ex1);
+                        alstu.get(x).setExam2(ex1);
+                        alstu.get(x).showAll();
+                        //alstu.get(x).showGrades();
+        }
+}// end class StudentArray 
+
+
+
+	• You should be allowed to select an account and then perform deposits, withdraws and check balances on the account selected
+	• Each account should be either a checking or savings account that inherits from the bank account class
+	• whether a class is checking or savings will determine via inheritance how much interest is calculated for each transaction
+	• The dates used to calculate interest are in the account code given to you, you will have to enter dates for each transaction to determine the interest this is evident in the account code given to you.  You will only need to assume that we are entering dates for the current year.
+	• Additionally you will need to have your program write and read from a file where you will write out your array of objects or you can write out in plain text if you want to process line by line.
+Good Luck!
+
+	Ø NET EFFECTS  IT Recruiting
